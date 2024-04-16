@@ -1,0 +1,98 @@
+{
+	"questions": [
+		{	
+			"id": "qn_frontend_framework",
+			"question_text": "How are you using Vizzly?",
+			"answers": [
+				{"id": "ans_react", "label": "React"},
+				{"id": "ans_vue", "label": "Vue"},
+        {"id": "ans_angular", "label": "Angular"},
+				{"id": "ans_vanilla", "label": "Vanilla with HTML"},
+        {"id": "ans_framework_other", "label": "Other"}
+			],
+			"next": [
+				{"answered": "ans_react", "next_question": "qn_typescript_javascript"},
+        {"answered": "ans_vue", "next_question": "qn_typescript_javascript"},
+        {"answered": "ans_angular", "next_question": "qn_package_manager"},
+				{"answered": "ans_vanilla", "next_question": "qn_cloud"}
+			]
+		},
+    {	
+			"id": "qn_typescript_javascript",
+			"question_text": "Are you Using Javascript or Typescript?",
+			"answers": [
+				{"id": "ans_typescript", "label": "Typescript"},
+				{"id": "ans_javascript", "label": "Javascript"},
+        {"id": "ans_lang_other", "label": "Other"}
+
+			],
+			"next": [
+				{"answered": "ans_javascript", "next_question": "qn_package_manager"},
+        {"answered": "ans_typescript", "next_question": "qn_package_manager"}
+			]
+		},
+		{	
+			"id": "qn_package_manager",
+			"question_text": "What package manager do you use?",
+			"answers": [
+				{"id": "ans_yarn", "label": "Yarn"},
+				{"id": "ans_npm", "label": "NPM"},
+        {"id": "ans_package_other", "label": "Other"}
+
+			],
+			"next": [
+				{"next_question": "qn_cloud"}
+			]
+		},
+		{	
+			"id": "qn_cloud",
+			"question_text": "Where is Vizzly query engine hosted?",
+			"answers": [
+				{"id": "ans_aws", "label": "AWS"},
+				{"id": "ans_gcp", "label": "GCP"},
+        {"id": "ans_azure", "label": "Azure"},
+				{"id": "ans_heroku", "label": "Heroku"},
+        {"id": "ans_vqe_other", "label": "Other"}
+
+			],
+			"next": [
+				{"answered": "ans_aws", "next_question": "qn_config"},
+        {"answered": "ans_gcp", "next_question": "qn_config"},
+        {"answered": "ans_azure", "next_question": "qn_config"}
+			]
+		},
+		{
+			"id": "qn_config",
+			"question_text": "Load Vizzly query engine config from?",
+			"answers": [
+        {"id": "ans_aws_s3", "label": "AWS S3"},
+				{"id": "ans_github", "label": "Github"},
+        {"id": "ans_viz", "label": "Vizzly API"},
+        {"id": "ans_conf_other", "label": "Other"}
+
+			],
+			"next": [
+        {"answered": "an_conf_other", "next_question": "qn_unknown"},
+				{"outcome": "jump_to_outcome"}
+			]
+		}
+	],
+	"outcomes": [
+		{
+			"id": "out_frontend_cloud_sdk",
+			"text": "Follow link for documentation on setting up for frontend framework"
+		},
+		{
+			"id": "out_vanilla_cloud",
+			"text": "Follow link for documentation on setting up for vanilla js + html"
+		},
+		{
+			"id": "out_other",
+			"text": "Contact us for more support on your setup"
+		},
+    {
+			"id": "out_unsupported",
+			"text": "We currently do not support this setup"
+		}
+	]
+}

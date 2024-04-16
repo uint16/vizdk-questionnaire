@@ -1,0 +1,13 @@
+.action-button {
+  background-color: #6accba;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
+}
+
+.action-button:disabled {
+  background-color: #eceff1;
+  font-weight: bold;
+  color: #7b99a9;
+  border-radius: 5px;
+}
